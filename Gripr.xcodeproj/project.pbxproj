@@ -1,0 +1,624 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C9EB7CE929198BA4005E4080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7CE829198BA4005E4080 /* AppDelegate.swift */; };
+		C9EB7CEB29198BA4005E4080 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7CEA29198BA4005E4080 /* SceneDelegate.swift */; };
+		C9EB7CED29198BA4005E4080 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7CEC29198BA4005E4080 /* ViewController.swift */; };
+		C9EB7CF029198BA4005E4080 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9EB7CEE29198BA4005E4080 /* Main.storyboard */; };
+		C9EB7CF329198BA4005E4080 /* Gripr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7CF129198BA4005E4080 /* Gripr.xcdatamodeld */; };
+		C9EB7CF529198BA7005E4080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9EB7CF429198BA7005E4080 /* Assets.xcassets */; };
+		C9EB7CF829198BA7005E4080 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9EB7CF629198BA7005E4080 /* LaunchScreen.storyboard */; };
+		C9EB7D0329198BA7005E4080 /* GriprTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7D0229198BA7005E4080 /* GriprTests.swift */; };
+		C9EB7D0D29198BA7005E4080 /* GriprUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7D0C29198BA7005E4080 /* GriprUITests.swift */; };
+		C9EB7D0F29198BA7005E4080 /* GriprUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7D0E29198BA7005E4080 /* GriprUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C9EB7CFF29198BA7005E4080 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9EB7CDD29198BA4005E4080 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9EB7CE429198BA4005E4080;
+			remoteInfo = Gripr;
+		};
+		C9EB7D0929198BA7005E4080 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9EB7CDD29198BA4005E4080 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9EB7CE429198BA4005E4080;
+			remoteInfo = Gripr;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C9EB7CE529198BA4005E4080 /* Gripr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gripr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9EB7CE829198BA4005E4080 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C9EB7CEA29198BA4005E4080 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C9EB7CEC29198BA4005E4080 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C9EB7CEF29198BA4005E4080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C9EB7CF229198BA4005E4080 /* Gripr.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gripr.xcdatamodel; sourceTree = "<group>"; };
+		C9EB7CF429198BA7005E4080 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C9EB7CF729198BA7005E4080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C9EB7CF929198BA7005E4080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9EB7CFE29198BA7005E4080 /* GriprTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GriprTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9EB7D0229198BA7005E4080 /* GriprTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GriprTests.swift; sourceTree = "<group>"; };
+		C9EB7D0829198BA7005E4080 /* GriprUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GriprUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9EB7D0C29198BA7005E4080 /* GriprUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GriprUITests.swift; sourceTree = "<group>"; };
+		C9EB7D0E29198BA7005E4080 /* GriprUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GriprUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C9EB7CE229198BA4005E4080 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9EB7CFB29198BA7005E4080 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9EB7D0529198BA7005E4080 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C9EB7CDC29198BA4005E4080 = {
+			isa = PBXGroup;
+			children = (
+				C9EB7CE729198BA4005E4080 /* Gripr */,
+				C9EB7D0129198BA7005E4080 /* GriprTests */,
+				C9EB7D0B29198BA7005E4080 /* GriprUITests */,
+				C9EB7CE629198BA4005E4080 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C9EB7CE629198BA4005E4080 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C9EB7CE529198BA4005E4080 /* Gripr.app */,
+				C9EB7CFE29198BA7005E4080 /* GriprTests.xctest */,
+				C9EB7D0829198BA7005E4080 /* GriprUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C9EB7CE729198BA4005E4080 /* Gripr */ = {
+			isa = PBXGroup;
+			children = (
+				C9EB7CE829198BA4005E4080 /* AppDelegate.swift */,
+				C9EB7CEA29198BA4005E4080 /* SceneDelegate.swift */,
+				C9EB7CEC29198BA4005E4080 /* ViewController.swift */,
+				C9EB7CEE29198BA4005E4080 /* Main.storyboard */,
+				C9EB7CF429198BA7005E4080 /* Assets.xcassets */,
+				C9EB7CF629198BA7005E4080 /* LaunchScreen.storyboard */,
+				C9EB7CF929198BA7005E4080 /* Info.plist */,
+				C9EB7CF129198BA4005E4080 /* Gripr.xcdatamodeld */,
+			);
+			path = Gripr;
+			sourceTree = "<group>";
+		};
+		C9EB7D0129198BA7005E4080 /* GriprTests */ = {
+			isa = PBXGroup;
+			children = (
+				C9EB7D0229198BA7005E4080 /* GriprTests.swift */,
+			);
+			path = GriprTests;
+			sourceTree = "<group>";
+		};
+		C9EB7D0B29198BA7005E4080 /* GriprUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C9EB7D0C29198BA7005E4080 /* GriprUITests.swift */,
+				C9EB7D0E29198BA7005E4080 /* GriprUITestsLaunchTests.swift */,
+			);
+			path = GriprUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C9EB7CE429198BA4005E4080 /* Gripr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9EB7D1229198BA7005E4080 /* Build configuration list for PBXNativeTarget "Gripr" */;
+			buildPhases = (
+				C9EB7CE129198BA4005E4080 /* Sources */,
+				C9EB7CE229198BA4005E4080 /* Frameworks */,
+				C9EB7CE329198BA4005E4080 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Gripr;
+			productName = Gripr;
+			productReference = C9EB7CE529198BA4005E4080 /* Gripr.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C9EB7CFD29198BA7005E4080 /* GriprTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9EB7D1529198BA7005E4080 /* Build configuration list for PBXNativeTarget "GriprTests" */;
+			buildPhases = (
+				C9EB7CFA29198BA7005E4080 /* Sources */,
+				C9EB7CFB29198BA7005E4080 /* Frameworks */,
+				C9EB7CFC29198BA7005E4080 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9EB7D0029198BA7005E4080 /* PBXTargetDependency */,
+			);
+			name = GriprTests;
+			productName = GriprTests;
+			productReference = C9EB7CFE29198BA7005E4080 /* GriprTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C9EB7D0729198BA7005E4080 /* GriprUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9EB7D1829198BA7005E4080 /* Build configuration list for PBXNativeTarget "GriprUITests" */;
+			buildPhases = (
+				C9EB7D0429198BA7005E4080 /* Sources */,
+				C9EB7D0529198BA7005E4080 /* Frameworks */,
+				C9EB7D0629198BA7005E4080 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9EB7D0A29198BA7005E4080 /* PBXTargetDependency */,
+			);
+			name = GriprUITests;
+			productName = GriprUITests;
+			productReference = C9EB7D0829198BA7005E4080 /* GriprUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C9EB7CDD29198BA4005E4080 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					C9EB7CE429198BA4005E4080 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					C9EB7CFD29198BA7005E4080 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = C9EB7CE429198BA4005E4080;
+					};
+					C9EB7D0729198BA7005E4080 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = C9EB7CE429198BA4005E4080;
+					};
+				};
+			};
+			buildConfigurationList = C9EB7CE029198BA4005E4080 /* Build configuration list for PBXProject "Gripr" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C9EB7CDC29198BA4005E4080;
+			productRefGroup = C9EB7CE629198BA4005E4080 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C9EB7CE429198BA4005E4080 /* Gripr */,
+				C9EB7CFD29198BA7005E4080 /* GriprTests */,
+				C9EB7D0729198BA7005E4080 /* GriprUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C9EB7CE329198BA4005E4080 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9EB7CF829198BA7005E4080 /* LaunchScreen.storyboard in Resources */,
+				C9EB7CF529198BA7005E4080 /* Assets.xcassets in Resources */,
+				C9EB7CF029198BA4005E4080 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9EB7CFC29198BA7005E4080 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9EB7D0629198BA7005E4080 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C9EB7CE129198BA4005E4080 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9EB7CED29198BA4005E4080 /* ViewController.swift in Sources */,
+				C9EB7CE929198BA4005E4080 /* AppDelegate.swift in Sources */,
+				C9EB7CF329198BA4005E4080 /* Gripr.xcdatamodeld in Sources */,
+				C9EB7CEB29198BA4005E4080 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9EB7CFA29198BA7005E4080 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9EB7D0329198BA7005E4080 /* GriprTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9EB7D0429198BA7005E4080 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9EB7D0D29198BA7005E4080 /* GriprUITests.swift in Sources */,
+				C9EB7D0F29198BA7005E4080 /* GriprUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C9EB7D0029198BA7005E4080 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9EB7CE429198BA4005E4080 /* Gripr */;
+			targetProxy = C9EB7CFF29198BA7005E4080 /* PBXContainerItemProxy */;
+		};
+		C9EB7D0A29198BA7005E4080 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9EB7CE429198BA4005E4080 /* Gripr */;
+			targetProxy = C9EB7D0929198BA7005E4080 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C9EB7CEE29198BA4005E4080 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9EB7CEF29198BA4005E4080 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C9EB7CF629198BA7005E4080 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9EB7CF729198BA7005E4080 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C9EB7D1029198BA7005E4080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C9EB7D1129198BA7005E4080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C9EB7D1329198BA7005E4080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WBU4CZ6AZJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Gripr/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Umich.Gripr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C9EB7D1429198BA7005E4080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WBU4CZ6AZJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Gripr/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Umich.Gripr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C9EB7D1629198BA7005E4080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WBU4CZ6AZJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Umich.GriprTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gripr.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Gripr";
+			};
+			name = Debug;
+		};
+		C9EB7D1729198BA7005E4080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WBU4CZ6AZJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Umich.GriprTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gripr.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Gripr";
+			};
+			name = Release;
+		};
+		C9EB7D1929198BA7005E4080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WBU4CZ6AZJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Umich.GriprUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Gripr;
+			};
+			name = Debug;
+		};
+		C9EB7D1A29198BA7005E4080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WBU4CZ6AZJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Umich.GriprUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Gripr;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C9EB7CE029198BA4005E4080 /* Build configuration list for PBXProject "Gripr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9EB7D1029198BA7005E4080 /* Debug */,
+				C9EB7D1129198BA7005E4080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9EB7D1229198BA7005E4080 /* Build configuration list for PBXNativeTarget "Gripr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9EB7D1329198BA7005E4080 /* Debug */,
+				C9EB7D1429198BA7005E4080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9EB7D1529198BA7005E4080 /* Build configuration list for PBXNativeTarget "GriprTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9EB7D1629198BA7005E4080 /* Debug */,
+				C9EB7D1729198BA7005E4080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9EB7D1829198BA7005E4080 /* Build configuration list for PBXNativeTarget "GriprUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9EB7D1929198BA7005E4080 /* Debug */,
+				C9EB7D1A29198BA7005E4080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C9EB7CF129198BA4005E4080 /* Gripr.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C9EB7CF229198BA4005E4080 /* Gripr.xcdatamodel */,
+			);
+			currentVersion = C9EB7CF229198BA4005E4080 /* Gripr.xcdatamodel */;
+			path = Gripr.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C9EB7CDD29198BA4005E4080 /* Project object */;
+}
