@@ -19,6 +19,8 @@
 		C9EB7D0329198BA7005E4080 /* GriprTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7D0229198BA7005E4080 /* GriprTests.swift */; };
 		C9EB7D0D29198BA7005E4080 /* GriprUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7D0C29198BA7005E4080 /* GriprUITests.swift */; };
 		C9EB7D0F29198BA7005E4080 /* GriprUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7D0E29198BA7005E4080 /* GriprUITestsLaunchTests.swift */; };
+		C9EB7D1D291A9136005E4080 /* UUIDKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7D1C291A9136005E4080 /* UUIDKey.swift */; };
+		C9EB7D1F291A9E9F005E4080 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7D1E291A9E9F005E4080 /* Extensions.swift */; };
 		D1337FC25CB5E750F5D48CB8 /* Pods_Gripr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 730397D5AF265C74EB68FE4B /* Pods_Gripr.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +64,8 @@
 		C9EB7D0829198BA7005E4080 /* GriprUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GriprUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9EB7D0C29198BA7005E4080 /* GriprUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GriprUITests.swift; sourceTree = "<group>"; };
 		C9EB7D0E29198BA7005E4080 /* GriprUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GriprUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C9EB7D1C291A9136005E4080 /* UUIDKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUIDKey.swift; sourceTree = "<group>"; };
+		C9EB7D1E291A9E9F005E4080 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EF1E8BC18980879A0E43150C /* Pods-GriprTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GriprTests.debug.xcconfig"; path = "Target Support Files/Pods-GriprTests/Pods-GriprTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +145,7 @@
 		C9EB7CE729198BA4005E4080 /* Gripr */ = {
 			isa = PBXGroup;
 			children = (
+				C9EB7D1B291A9120005E4080 /* Models */,
 				C9EB7CE829198BA4005E4080 /* AppDelegate.swift */,
 				C9EB7CEA29198BA4005E4080 /* SceneDelegate.swift */,
 				C9EB7CEC29198BA4005E4080 /* ViewController.swift */,
@@ -168,6 +173,15 @@
 				C9EB7D0E29198BA7005E4080 /* GriprUITestsLaunchTests.swift */,
 			);
 			path = GriprUITests;
+			sourceTree = "<group>";
+		};
+		C9EB7D1B291A9120005E4080 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C9EB7D1C291A9136005E4080 /* UUIDKey.swift */,
+				C9EB7D1E291A9E9F005E4080 /* Extensions.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,8 +424,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9EB7CED29198BA4005E4080 /* ViewController.swift in Sources */,
+				C9EB7D1F291A9E9F005E4080 /* Extensions.swift in Sources */,
 				C9EB7CE929198BA4005E4080 /* AppDelegate.swift in Sources */,
 				C9EB7CF329198BA4005E4080 /* Gripr.xcdatamodeld in Sources */,
+				C9EB7D1D291A9136005E4080 /* UUIDKey.swift in Sources */,
 				C9EB7CEB29198BA4005E4080 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
