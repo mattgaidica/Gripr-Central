@@ -7,6 +7,7 @@
 import Charts
 import UIKit
 import CoreBluetooth
+import Accelerate
 
 class ViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate, CBCentralManagerDelegate, CBPeripheralDelegate {
 
@@ -17,10 +18,14 @@ class ViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate, 
     @IBOutlet weak var copyLogLabel: UILabel!
     @IBOutlet weak var threshSlider: UISlider!
     @IBOutlet weak var threshSliderLabel: UILabel!
-    @IBOutlet weak var connectedLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var loadValDisplayLabel: UILabel!
+    @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak var dataLogView: UIView!
+    @IBOutlet weak var rssiLabel: UILabel!
+    @IBOutlet weak var connectedButton: UIButton!
+    @IBOutlet weak var smoothSwitch: UISwitch!
     
     // BLE
     private var centralManager: CBCentralManager!
@@ -28,6 +33,8 @@ class ViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate, 
     var timeoutConnTimer = Timer()
     var timeOutSec: Double = 60*2
     private var loadChar: CBCharacteristic?
+    var RSSITimer = Timer()
+    var griprRSSI: NSNumber = 0
     
     // Graph Vars
     var data = LineChartData()
@@ -45,6 +52,7 @@ class ViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate, 
     var threshActive: Bool = false
     var maxLoadVal: Int32 = 0
     let maxLoadLog: Int = 10
+    let pasteboard = UIPasteboard.general
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,44 +74,73 @@ class ViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate, 
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if central.state == .poweredOn {
             scanBLE()
-            connectedLabel.text = "Searching..."
         }
     }
     
     func scanBLE() {
+        connectedButton.setTitle("Searching...", for: .normal)
         centralManager.scanForPeripherals(withServices: [GriprPeripheral.GriprServiceUUID],
                                           options: [CBCentralManagerScanOptionAllowDuplicatesKey : false])
-//        timeoutConnTimer = Timer.scheduledTimer(withTimeInterval: timeOutSec, repeats: false) { timer in
-//            self.cancelScan()
-//        }
+        timeoutConnTimer = Timer.scheduledTimer(withTimeInterval: timeOutSec, repeats: false) { timer in
+            self.cancelScan()
+        }
     }
     
     // Handles the result of the scan
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        print("Found peripheral, connectig...")
+        print("Found peripheral, connecting...")
         // We've found it so stop scan
         self.centralManager.stopScan()
         // Copy the peripheral instance
         self.peripheral = peripheral
         self.peripheral.delegate = self
         self.centralManager.connect(self.peripheral, options: nil)
+        self.griprRSSI = RSSI
     }
     
-//    func cancelScan() {
-//        centralManager?.stopScan()
-//        connectedLabel.text = "Scan Timeout"
-//    }
+    func cancelScan() {
+        centralManager?.stopScan()
+        connectedButton.setTitle("BLE Timeout", for: .normal)
+    }
+    
+    func delegateRSSI() {
+        if self.peripheral != nil {
+            self.peripheral.delegate = self
+            self.peripheral.readRSSI()
+        }
+    }
+    
+    func updateRSSI(RSSI: NSNumber!) {
+        rssiLabel.textColor = UIColor.white
+        let str : String = RSSI.stringValue
+        rssiLabel.text = str + "dB"
+    }
+    
+    func startReadRSSI() {
+        self.RSSITimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+            self.delegateRSSI()
+        }
+    }
+    
+    func stopReadRSSI() {
+        self.RSSITimer.invalidate()
+    }
     
     func peripheral(_ peripheral: CBPeripheral, didReadRSSI RSSI: NSNumber, error: Error?) {
-//        updateRSSI(RSSI: RSSI)
+        updateRSSI(RSSI: RSSI)
     }
     
     // The handler if we do connect succesfully
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         if peripheral == self.peripheral {
-//            timeoutConnTimer.invalidate()
-            connectedLabel.text = peripheral.name
+            timeoutConnTimer.invalidate()
+            updateRSSI(RSSI: griprRSSI)
+            self.startReadRSSI()
+            connectedButton.setTitle(peripheral.name, for: .normal)
             peripheral.discoverServices([GriprPeripheral.GriprServiceUUID])
+            startButton.isEnabled = true
+            stopButton.isEnabled = false
+            resetButton.isEnabled = true
         }
     }
     
@@ -150,16 +187,6 @@ class ViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate, 
                 let dataPoint = pointer.load(fromByteOffset: 0, as: Int32.self)
                 loadChartData[loadChartData.count - 1] = dataPoint
             }
-            
-            // below is for sending bigger data streams
-//            EEG2Plot.replaceSubrange(0..<EEG2Data.count, with: EEG2Data)
-//            EEG2Plot.rotateLeft(positions: EEG2Data.count)
-//            let _ = data.withUnsafeBytes { pointer in
-//                for n in 0..<loadBuffer.count {
-//                    let dataPoint = pointer.load(fromByteOffset:n*4, as: Int32.self)
-//                    loadBuffer[n] = dataPoint
-//                }
-//            }
             updateChart()
             checkThreshold()
         }
@@ -168,13 +195,18 @@ class ViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate, 
     // disconnected
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
         if peripheral == self.peripheral {
-//            stopReadRSSI()
-            connectedLabel.text = "Not Connected"
+            stopReadRSSI()
+            rssiLabel.text = ""
+            connectedButton.setTitle("Not Connected", for: .normal)
             self.peripheral = nil
             loadChar = nil
             threshActive = false
             maxLoadVal = 0
-            scanBLE()
+            startButton.isEnabled = false
+            stopButton.isEnabled = false
+            resetButton.isEnabled = false
+            dataLogView.alpha = 0.7
+//            scanBLE() // auto scan
         }
     }
     
@@ -191,6 +223,14 @@ class ViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate, 
         print("Write characteristic success")
     }
     
+    @IBAction func connectedButtonTouch(_ sender: Any) {
+        if peripheral != nil {
+            centralManager?.cancelPeripheralConnection(peripheral)
+        } else {
+            scanBLE()
+        }
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
@@ -203,6 +243,14 @@ class ViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate, 
     
     @IBAction func copyLog(_ sender: Any) {
         copyLogLabel.textColor = UIColor.black
+        var logStr = ""
+        let loadComponents = maxLoadTextView.text.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: "\n")
+        let timeComponents = timeTextView.text.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: "\n")
+        
+        for i in 0..<timeComponents.count {
+            logStr += timeComponents[i].replacingOccurrences(of: " ", with: ",") + "," + loadComponents[i] + "\n"
+        }
+        pasteboard.string = logStr
         Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { timer in
             self.copyLogLabel.textColor = UIColor.white
         }
@@ -218,7 +266,7 @@ class ViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate, 
     func getTimeStr() -> String {
         let date = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm:ss (d MMM YY)"
+        dateFormatter.dateFormat = "HH:mm:ss YYYYmmdd"
         return dateFormatter.string(from: date)
     }
     
@@ -239,6 +287,8 @@ class ViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate, 
         timeTextView.text = ""
         maxLoadTextView.text = ""
         statsTextView.text = ""
+        loadValDisplayLabel.text = ""
+        maxLoadVal = 0
     }
     
     func reportMaxLoad() {
@@ -253,7 +303,7 @@ class ViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate, 
         
         let loadComponents = maxLoadTextView.text.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: "\n")
         let timeComponents = timeTextView.text.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: "\n")
-        var maxComponents = min(maxLoadLog, loadComponents.count)
+        let maxComponents = min(maxLoadLog, loadComponents.count)
         var maxLoadStr = ""
         var timeStr = ""
 
@@ -280,6 +330,7 @@ class ViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate, 
     
     func checkThreshold() {
         if stopButton.isEnabled {
+            dataLogView.alpha = 1
             let lastLoadVal = loadChartData[loadChartData.count-1]
             loadValDisplayLabel.text = String(maxLoadVal)
             if threshActive {
@@ -298,6 +349,7 @@ class ViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate, 
                 }
             }
         } else {
+            dataLogView.alpha = 0.7
             loadValDisplayLabel.text = ""
             threshActive = false // force off
         }
@@ -306,15 +358,37 @@ class ViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate, 
     func updateChart() {
         data = LineChartData()
         lineChartEntry = [ChartDataEntry]()
-        for i in 0..<loadChartData.count {
-            let value = ChartDataEntry(x: Double(i), y: Double(loadChartData[i]))
-            lineChartEntry.append(value)
+        if smoothSwitch.isOn {
+            var doubleData = loadChartData.map { Double($0) }
+            let nSmooth = 5
+            for i in 0..<doubleData.count {
+                var miniSum: Double = 0
+                var nelem: Double = 0
+                for j in 0..<min(nSmooth, i + 1, doubleData.count - i) {
+                    miniSum += doubleData[i + j]
+                    nelem += 1
+                }
+                doubleData[i] = miniSum / nelem
+            }
+            
+            // for moving avg: nSMooth..<doubleData.count - nSmooth
+            for i in 0..<doubleData.count {
+                let value = ChartDataEntry(x: Double(i), y: doubleData[i])
+                lineChartEntry.append(value)
+            }
+        } else {
+            for i in 0..<loadChartData.count {
+                let value = ChartDataEntry(x: Double(i), y: Double(loadChartData[i]))
+                lineChartEntry.append(value)
+            }
         }
         let line1 = LineChartDataSet(entries: lineChartEntry, label: "Load (g)")
         line1.colors = [color2]
         line1.drawCirclesEnabled = false
         line1.drawValuesEnabled = false
         data.addDataSet(line1)
+        
+        
         
         loadThreshData = Array(repeating: Int32(threshSlider.value), count: loadThreshData.count)
         lineChartEntry = [ChartDataEntry]()
