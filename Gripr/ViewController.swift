@@ -337,7 +337,7 @@ class ViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate, 
                 if lastLoadVal > maxLoadVal {
                     maxLoadVal = lastLoadVal
                 }
-                if lastLoadVal < Int(threshSlider.value) { // turn OFF
+                if lastLoadVal < 40 { //Int(threshSlider.value) { // turn OFF
                     threshActive = false
                     reportMaxLoad()
                 }
